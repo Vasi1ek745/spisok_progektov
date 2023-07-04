@@ -1,0 +1,35 @@
+<div class="border border-gray-200 rounded-lg shadow-xl m-3 p-3 max-w-lg">
+  <div class="m-2 flex flex-col">
+    <h1 class="text-3xl m-2 mb-5"> 
+      <% if @new %>
+        Добавить задачу
+      <% else %>
+        Редктировать задачу
+      <% end %> 
+
+    </h1>
+
+    <%= form_with model: @task do |form| %>
+   
+    <div class="flex-col">
+      <%= form.label "Задача" , class:"text-xl m-2"  %><br>
+      <%= form.text_field :title , class:"m-2 rounded-lg shadow-xl", minlength: "3", required: true %>
+    </div>
+
+    <div class="flex-col">
+      <%= form.label "Описание" , class:"text-xl m-2" %><br>
+      <%= form.text_area :body , class:"m-2 rounded-lg shadow-xl " %>
+    </div>
+    <div class="flex-col">
+      <%= form.label "Процент выполнения" , class:"text-xl m-2"  %><br>
+      <%= form.text_field :complit_procent , class:"m-2 rounded-lg shadow-xl " %>
+    </div>
+
+
+    <div class="m-2">
+      <input type="submit" name="commit" value="подтвердить" class="bg-indigo-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded-full" data-disable-with="создать">
+    </div>
+    <% end %>
+  </div>
+</div>
+

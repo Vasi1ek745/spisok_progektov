@@ -1,0 +1,48 @@
+<div class="flex flex-col m-2">
+
+    <div class="mb-2">
+        <div class="m-2 ">
+            <h1 class="text-3xl"><%= @task.title %></h1>
+        </div>
+        <div class="m-2 text-lg">
+            <p> <%= @task.body %> </p>
+        </div>
+    </div>
+
+    <div class="flex flex-row ">
+        <div class="flex flex-col border border-gray-200 shadow-xl rounded-lg max-w-lg my-2 mr-2 ">
+            <div class="flex justify-center m-2">
+                <h1 class=" text-xl font-semibold text-gray-900 dark:text-white"> Планы:  </h1>
+            </div>
+             <% @points_no_finished.each do |point|%>
+            <div class="flex m-2">
+                <div>
+                    <ul class="max-w-md space-y-1 m-2 text-lg text-gray-700 list-disc list-inside dark:text-gray-400">
+                        <li> <%= point.title %> </li>
+                    </ul>
+                </div>
+
+            </div>
+            <% end %>
+        </div>
+        <div class="flex flex-col border border-gray-200 shadow-xl rounded-lg max-w-lg my-2 ml-2">
+            <div class="justify-center flex m-2">
+                <h1 class=" text-xl font-semibold text-gray-900 dark:text-white"> Уже сделано:  </h1>
+            </div>
+             <% @points_finished.each do |point|%>
+            <div class="flex m-2">
+                <div>
+                    <ul class="max-w-md space-y-1 m-2 text-lg text-gray-700 list-disc list-inside dark:text-gray-400">
+                        <li> <%= point.title %> </li>
+                    </ul>
+                </div>
+
+            </div>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="flex"> <%= link_to "Редактировать", task_points_path(@task), type: "button", class:"text-gray-900 bg-white border border-gray-400 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" %>
+    </div>
+               
+</div>
