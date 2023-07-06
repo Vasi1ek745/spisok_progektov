@@ -25,6 +25,9 @@
             </div>
             <% end %>
         </div>
+        <% if @points_finished.size !=0  %>
+            
+         
         <div class="flex flex-col border border-gray-200 shadow-xl rounded-lg max-w-lg my-2 ml-2">
             <div class="justify-center flex m-2">
                 <h1 class=" text-xl font-semibold text-gray-900 dark:text-white"> Уже сделано:  </h1>
@@ -40,6 +43,7 @@
             </div>
             <% end %>
         </div>
+            <% end %>
     </div>
 
     <div class="flex"> <%= link_to "Редактировать", task_points_path(@task), type: "button", class:"text-gray-900 bg-white border border-gray-400 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" %>
