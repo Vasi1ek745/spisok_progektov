@@ -23,7 +23,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(article_params)
     if @task.save
-        redirect_to root_path
+        redirect_to tasks_path
     else 
       render :new , status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update(article_params)
-      redirect_to root_path
+      redirect_to tasks_path
     else 
       render :edit, status: :unprocessable_entity
     end
